@@ -95,3 +95,24 @@ export function SpendingChart() {
               <Line type="monotone" dataKey="spending" stroke="#ef4444" name="Spending" strokeWidth={2} />
               <Line type="monotone" dataKey="savings" stroke="#22c55e" name="Savings" strokeWidth={2} />
             </LineChart>
+          </ResponsiveContainer>
+        )
+
+      default:
+        return null
+    }
+  }
+
+  const getChartDescription = () => {
+    switch (chartType) {
+      case "daily":
+        return "Your daily spending compared to budget limits"
+      case "category":
+        return "Breakdown of spending by category this month"
+      case "trend":
+        return "Weekly spending and savings trends"
+      default:
+        return ""
+    }
+  }
+
