@@ -38,3 +38,60 @@ const categoryData = [
 ]
 
 const weeklyTrendData = [
+  { week: "Week 1", spending: 85000, savings: 15000 },
+  { week: "Week 2", spending: 78000, savings: 22000 },
+  { week: "Week 3", spending: 82000, savings: 18000 },
+  { week: "Week 4", spending: 75000, savings: 25000 },
+]
+
+export function SpendingChart() {
+  const [chartType, setChartType] = useState("daily")
+
+  const renderChart = () => {
+    switch (chartType) {
+      case "daily":
+        return (
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={dailySpendingData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="date" />
+              <YAxis tickFormatter={(value) => `${value / 1000}k`} />
+              <Tooltip formatter={(value) => formatCurrency(Number(value))} />
+              <Bar dataKey="amount" fill="#22c55e" name="Spent" />
+              <Bar dataKey="budget" fill="#e5e7eb" name="Budget" />
+            </BarChart>
+          </ResponsiveContainer>
+        )
+
+      case "category":
+        return (
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                data={categoryData}
+                cx="50%"
+                cy="50%"
+                outerRadius={100}
+                dataKey="value"
+                label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+              >
+                {categoryData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Pie>
+              <Tooltip formatter={(value) => formatCurrency(Number(value))} />
+            </PieChart>
+          </ResponsiveContainer>
+        )
+
+      case "trend":
+        return (
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={weeklyTrendData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="week" />
+              <YAxis tickFormatter={(value) => `${value / 1000}k`} />
+              <Tooltip formatter={(value) => formatCurrency(Number(value))} />
+              <Line type="monotone" dataKey="spending" stroke="#ef4444" name="Spending" strokeWidth={2} />
+              <Line type="monotone" dataKey="savings" stroke="#22c55e" name="Savings" strokeWidth={2} />
+            </LineChart>
