@@ -1,0 +1,17 @@
+{
+    "sequence_length": 30,
+    "prediction_step": 1,
+    "feature_columns": [
+        "amount",
+        "category_encoded",
+        "month_sin",
+        "month_cos",
+        "day_of_week_sin",
+        "day_of_week_cos",
+        "hour_sin",
+        "hour_cos",
+        "is_weekend",
+        "day_of_year"
+    ],
+    "n_features": 10
+}
