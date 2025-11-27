@@ -116,3 +116,27 @@ export function SpendingChart() {
     }
   }
 
+  return (
+    <Card>
+      <CardHeader>
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle>Spending Analytics</CardTitle>
+            <CardDescription>{getChartDescription()}</CardDescription>
+          </div>
+          <Select value={chartType} onValueChange={setChartType}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="daily">Daily Spending</SelectItem>
+              <SelectItem value="category">By Category</SelectItem>
+              <SelectItem value="trend">Weekly Trends</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </CardHeader>
+      <CardContent>{renderChart()}</CardContent>
+    </Card>
+  )
+}
