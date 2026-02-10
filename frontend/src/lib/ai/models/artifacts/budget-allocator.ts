@@ -1,0 +1,1 @@
+export const trainedBudgetShares = {'Rent': 0.2907, 'Transport': 0.0871, 'Food': 0.1838, 'Utilities': 0.0858, 'Entertainment': 0.0497, 'Savings': 0.1609, 'Debt Payments': 0.0603, 'Insurance': 0.0476, 'Eating_Out': 0.0478, 'Health': 0.0545, 'Education': 0.0797, 'Miscellaneous': 0.0273} as const;
