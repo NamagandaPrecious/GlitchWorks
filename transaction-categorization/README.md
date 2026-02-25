@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Categorize transactions using machine learning
 
 ### The project aims to categorize bank transactions based on transaction text using machine learning
@@ -43,7 +42,3 @@ Possible categories have been manually selected. A transaction can be categorize
 
 ## Conclusion
 Random Forest seems to be good enough to classify transactions
-=======
-# GlitchWorks
-An AI-powered digital wallet for Ugandan university students, designed to promote financial inclusion and security. It uses AI and blockchain for fraud detection, smart budgeting, and secure peer payments via USSD/SMS. Built with Flask, Solidity, and TensorFlow, it empowers students to manage money safely and wisely.
->>>>>>> 5442000eb559f6b6ac237025223a3a556cd52372

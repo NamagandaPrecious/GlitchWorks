@@ -1,0 +1,13 @@
+# Jupyter support
+ipykernel>=6.0
+
+# Notebook dependencies
+pandas
+numpy
+nltk
+scikit-learn
+matplotlib
+
+# Optional: for downloading real data from Kaggle (see DATASETS.md)
+# kaggle
+# kagglehub   # alternative: no API token needed
